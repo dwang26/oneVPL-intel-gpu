@@ -235,6 +235,7 @@ mfxStatus CheckFrameInfoCodecs(mfxFrameInfo  *info, mfxU32 codecId)
     case MFX_CODEC_JPEG:
         if (info->FourCC != MFX_FOURCC_NV12 &&
             info->FourCC != MFX_FOURCC_RGB4 &&
+            info->FourCC != MFX_FOURCC_BGR4 &&
             info->FourCC != MFX_FOURCC_YUY2 &&
             info->FourCC != MFX_FOURCC_UYVY &&
             info->FourCC != MFX_FOURCC_BGRP &&

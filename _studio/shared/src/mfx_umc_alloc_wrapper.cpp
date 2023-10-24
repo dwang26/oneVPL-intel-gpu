@@ -296,6 +296,9 @@ UMC::Status mfx_UMC_FrameAllocator::InitMfx(UMC::FrameAllocatorParams *,
     case MFX_FOURCC_RGB4:
         color_format = UMC::RGB32;
         break;
+    case MFX_FOURCC_BGR4:
+        color_format = UMC::RGB32;
+        break;
     case MFX_FOURCC_YV12:
         color_format = UMC::YUV420;
         break;
@@ -927,6 +930,7 @@ mfxI32 mfx_UMC_FrameAllocator::AddSurface(mfxFrameSurface1 *surface)
     case MFX_FOURCC_YV12:
     case MFX_FOURCC_YUY2:
     case MFX_FOURCC_RGB4:
+    case MFX_FOURCC_BGR4:
     case MFX_FOURCC_AYUV:
     case MFX_FOURCC_P010:
     case MFX_FOURCC_P210:
@@ -1268,6 +1272,9 @@ SurfaceSource::SurfaceSource(VideoCORE* core, const mfxVideoParam& video_param, 
             color_format = UMC::NV16;
             break;
         case MFX_FOURCC_RGB4:
+            color_format = UMC::RGB32;
+            break;
+        case MFX_FOURCC_BGR4:
             color_format = UMC::RGB32;
             break;
         case MFX_FOURCC_YV12:
